@@ -69,10 +69,10 @@ nav {
   z-index: 100;
   backdrop-filter: blur(24px);
 }
-.nav-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; }
+.nav-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; cursor: pointer; text-decoration: none; color: inherit; }
 .nav-logo-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   letter-spacing: 4px;
   line-height: 1;
@@ -83,7 +83,7 @@ nav {
 .nav-logo-text .ia { color: var(--silver-light); }
 .nav-tagline {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 7px;
+  font-size: 10px;
   color: rgba(200,149,42,0.5);
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -150,39 +150,18 @@ nav {
 }
 .hero-wrap { max-width: var(--max); width: 100%; margin: 0 auto; }
 
-.slogan-rotator {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  max-width: 900px;
-  margin: -16px 0 34px;
-  padding: 12px 16px;
-  border: 1px solid rgba(200,149,42,0.22);
-  background: rgba(8,8,8,0.72);
-  backdrop-filter: blur(14px);
-}
-.slogan-rotator-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(200,149,42,0.70);
-  white-space: nowrap;
-}
-.slogan-rotator-text {
+
+.hero-slogan {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(18px, 2vw, 26px);
   font-style: italic;
-  color: var(--silver-light);
-  line-height: 1.25;
+  color: var(--gold-light);
+  line-height: 1.3;
+  margin: 14px 0 28px;
+  max-width: 900px;
   transition: opacity .35s ease, transform .35s ease;
 }
-.slogan-rotator-text.is-changing { opacity: 0; transform: translateY(4px); }
-@media (max-width: 680px) {
-  .slogan-rotator { display: flex; flex-direction: column; align-items: flex-start; margin-top: -8px; }
-  .slogan-rotator-label { white-space: normal; }
-}
-
+.hero-slogan.is-changing { opacity: 0; transform: translateY(4px); }
 .hero-label, .s-label {
   display: flex;
   align-items: center;
@@ -447,10 +426,10 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
 </head>
 <body>
 <nav>
-  <div class="nav-brand">
+  <a href="index.html" class="nav-brand">
     <div class="nav-logo-text"><span class="ea">EA</span><span class="sep"> | </span><span class="ia">IA</span></div>
     <div class="nav-tagline">Intelligence artificielle opérationnelle</div>
-  </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#preuve">Preuve</a></li>
     <li><a href="#pipeline">Pipeline</a></li>
@@ -465,15 +444,12 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   <div class="hero-orb"></div>
   <div class="hero-wrap">
 <div class="hero-label"><div class="hero-label-line"></div><div class="hero-label-text">Produit phare · EA IA · Lancement MSP</div></div>
-    <div class="hero-eyebrow">25 années d’administration système · 164 formations · système MSP opérationnel</div>
+    <div class="hero-eyebrow">25 années d'administration système · 164 formations · système MSP opérationnel</div>
     <h1>MSP Intelligence OS<br><em>le cerveau opérationnel</em><br><span class="strong">des équipes MSP.</span></h1>
     <div class="hero-product-tag">MSP INTELLIGENCE IT · 33 AGENTS · 123 FICHIERS · 93 TEMPLATES · 30 SCRIPTS · CAS ANONYMISÉS PRÊTS</div>
-    <div class="slogan-rotator" aria-live="polite">
-      <span class="slogan-rotator-label">Slogan</span>
-      <span class="slogan-rotator-text" id="sloganRotator">La prochaine étape de l’IA n’est pas une conversation. C’est une armée.</span>
-    </div>
+    <p class="hero-slogan" id="sloganRotator">La prochaine étape de l'IA n'est pas une conversation. C'est une armée.</p>
     <p class="hero-sub">
-      Le système d’exploitation IA pour MSP : une plateforme terrain qui transforme les billets en interventions guidées,
+      Le système d'exploitation IA pour MSP : une plateforme terrain qui transforme les billets en interventions guidées,
       documentées et facturables. Le noyau MSP regroupe maintenant <strong>33 agents spécialisés</strong>, <strong>123 runbooks / fichiers opérationnels</strong>, <strong>93 templates</strong>, <strong>30 scripts</strong> et <strong>cas terrain anonymisés, prêts pour validation et activation contrôlée</strong>.
     </p>
     <div class="hero-metrics">
@@ -515,17 +491,17 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   <div class="problem-inner">
     <div>
       <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Le problème MSP</div></div>
-      <div class="s-title">Vos équipes ne manquent pas d’outils.<br><em>Elles manquent d’un système.</em></div>
+      <div class="s-title">Vos équipes ne manquent pas d'outils.<br><em>Elles manquent d'un système.</em></div>
       <p class="s-sub">
-        Les MSP ont des RMM, PSA, KB, portails, scripts, alertes et procédures. Le problème, c’est l’espace entre tous ces morceaux :
-        le jugement opérationnel, la séquence d’intervention, la communication client et la mémoire technique.
+        Les MSP ont des RMM, PSA, KB, portails, scripts, alertes et procédures. Le problème, c'est l'espace entre tous ces morceaux :
+        le jugement opérationnel, la séquence d'intervention, la communication client et la mémoire technique.
       </p>
     </div>
     <div class="problem-pains">
-      <div class="pain-item"><div class="pain-icon">01</div><div class="pain-text"><strong>Billets mal qualifiés.</strong> Le contexte est incomplet, les priorités se mélangent, le technicien recommence l’analyse à zéro.</div></div>
+      <div class="pain-item"><div class="pain-icon">01</div><div class="pain-text"><strong>Billets mal qualifiés.</strong> Le contexte est incomplet, les priorités se mélangent, le technicien recommence l'analyse à zéro.</div></div>
       <div class="pain-item"><div class="pain-icon">02</div><div class="pain-text"><strong>Documentation inégale.</strong> La qualité des notes dépend du temps, du niveau et de la discipline du technicien.</div></div>
       <div class="pain-item"><div class="pain-icon">03</div><div class="pain-text"><strong>Escalades floues.</strong> Les seniors reçoivent des cas sans précheck clair, sans risque isolé, sans ligne de décision propre.</div></div>
-      <div class="pain-item"><div class="pain-icon">04</div><div class="pain-text"><strong>Valeur invisible.</strong> Le MSP travaille fort, mais le client ne voit pas toujours la profondeur réelle de l’intervention.</div></div>
+      <div class="pain-item"><div class="pain-icon">04</div><div class="pain-text"><strong>Valeur invisible.</strong> Le MSP travaille fort, mais le client ne voit pas toujours la profondeur réelle de l'intervention.</div></div>
     </div>
   </div>
   <div class="content-wrap">
@@ -554,12 +530,12 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   <div class="modules-header">
     <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Ce que la plateforme fait</div></div>
     <div class="s-title"><strong>Du billet brut</strong><br>à la clôture <em>propre.</em></div>
-    <p class="s-sub">La plateforme orchestre le travail : ingestion, diagnostic, routage vers l’agent, runbook, commandes, validation, livrables et capitalisation. La page est mise à jour avec le noyau actuel : 33 agents, 123 fichiers opérationnels, 93 templates, 30 scripts et une bibliothèque MSP extraite dans un site autonome, à valider avant publication publique.</p>
+    <p class="s-sub">La plateforme orchestre le travail : ingestion, diagnostic, routage vers l'agent, runbook, commandes, validation, livrables et capitalisation. La page est mise à jour avec le noyau actuel : 33 agents, 123 fichiers opérationnels, 93 templates, 30 scripts et une bibliothèque MSP extraite dans un site autonome, à valider avant publication publique.</p>
   </div>
   <div class="modules-grid">
     <div class="mod-card"><div class="mod-n">MODULE 01</div><div class="mod-name">Ingestion</div><div class="mod-sub">Signal → contexte</div><div class="mod-desc">Analyse du billet, extraction des signaux, identification du client, du système touché et du risque réel.</div></div>
-    <div class="mod-card"><div class="mod-n">MODULE 02</div><div class="mod-name">Dispatch</div><div class="mod-sub">Agent → runbook</div><div class="mod-desc">Sélection de l’agent spécialisé, du playbook et des validations à faire avant toute action sensible.</div></div>
-    <div class="mod-card"><div class="mod-n">MODULE 03</div><div class="mod-name">Exécution</div><div class="mod-sub">Precheck → action</div><div class="mod-desc">Guidage technique : commandes, contrôles, précautions, critères de réussite et points d’arrêt.</div></div>
+    <div class="mod-card"><div class="mod-n">MODULE 02</div><div class="mod-name">Dispatch</div><div class="mod-sub">Agent → runbook</div><div class="mod-desc">Sélection de l'agent spécialisé, du playbook et des validations à faire avant toute action sensible.</div></div>
+    <div class="mod-card"><div class="mod-n">MODULE 03</div><div class="mod-name">Exécution</div><div class="mod-sub">Precheck → action</div><div class="mod-desc">Guidage technique : commandes, contrôles, précautions, critères de réussite et points d'arrêt.</div></div>
     <div class="mod-card"><div class="mod-n">MODULE 04</div><div class="mod-name">Livrables</div><div class="mod-sub">Interne + client</div><div class="mod-desc">Production de notes ConnectWise, discussions client-safe, résumés coordo, avis Teams et KB.</div></div>
     <div class="mod-card"><div class="mod-n">MODULE 05</div><div class="mod-name">Capitalisation</div><div class="mod-sub">Mémoire MSP</div><div class="mod-desc">Transformation des interventions en cas réutilisables, procédures, templates et démonstrateurs de valeur.</div></div>
     <div class="mod-card"><div class="mod-n">MODULE 06</div><div class="mod-name">Vente</div><div class="mod-sub">Preuve terrain</div><div class="mod-desc">Les cas anonymisés deviennent des preuves crédibles pour le marketing, la vente et la rétention client.</div></div>
@@ -570,7 +546,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   <div class="content-wrap">
     <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Preuve produit</div></div>
     <div class="s-title">Une plateforme complète,<br><em>pas une promesse.</em></div>
-    <p class="s-sub">Les chiffres ne remplacent pas la qualité, mais ici ils prouvent l’ampleur du système déjà construit et testé.</p>
+    <p class="s-sub">Les chiffres ne remplacent pas la qualité, mais ici ils prouvent l'ampleur du système déjà construit et testé.</p>
   </div>
   <div class="arsenal-grid">
     <div class="arsenal-block"><div class="arsenal-n">33</div><div class="arsenal-unit">Agents spécialisés</div><div class="arsenal-desc">Support, NOC, cloud, Microsoft 365, sécurité, backup, documentation, escalade, coordination, fermeture et capitalisation.</div></div>
@@ -578,7 +554,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
     <div class="arsenal-block"><div class="arsenal-n">93</div><div class="arsenal-unit">Templates</div><div class="arsenal-desc">Notes internes, discussions clients, rapports, communications Teams, postmortems, QBR, KB et sorties prêtes à coller.</div></div>
     <div class="arsenal-block"><div class="arsenal-n">30</div><div class="arsenal-unit">Scripts</div><div class="arsenal-desc">Scripts et fragments PowerShell pour précheck, postcheck, santé serveur, AD, Veeam, pending reboot et maintenance console.</div></div>
     <div class="arsenal-block"><div class="arsenal-n">37</div><div class="arsenal-unit">Cas anonymisés</div><div class="arsenal-desc">Bibliothèque de situations MSP réelles déjà anonymisées : AD, Veeam, Azure, Windows Update, RDS, supervision, matériel. Activation publique progressive selon validation.</div></div>
-    <div class="arsenal-block"><div class="arsenal-n">25</div><div class="arsenal-unit">Années d’expérience</div><div class="arsenal-desc">Une synthèse opérationnelle bâtie sur le terrain, renforcée par plus de 160 formations cumulées.</div></div>
+    <div class="arsenal-block"><div class="arsenal-n">25</div><div class="arsenal-unit">Années d'expérience</div><div class="arsenal-desc">Une synthèse opérationnelle bâtie sur le terrain, renforcée par plus de 160 formations cumulées.</div></div>
   </div>
 </section>
 
@@ -594,7 +570,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
         <tr><td><strong>Backup / Veeam</strong></td><td>Alertes VSS, redémarrage contrôlé, validation services et postcheck</td><td>Réduction du risque, clôture propre, traçabilité</td></tr>
         <tr><td><strong>Endpoint / EDR</strong></td><td>Stabilité EDR sur serveur critique, fichiers, performance</td><td>Corrélation, analyse impact, décision escalade</td></tr>
         <tr><td><strong>Infrastructure</strong></td><td>Auvik / ESXi, WatchGuard, iDRAC / PERC, Hyper-V / NOC, DHCP, NTFS et supervision</td><td>Lecture terrain, priorisation, synthèse facturable</td></tr>
-        <tr><td><strong>Backup & DR</strong></td><td>BackupRadar / QNAP / Wasabi, Veeam, BDR, vérification post-maintenance</td><td>Triage guidé, preuve de protection, livrables client-safe</td></tr>
+        <tr><td><strong>Backup &amp; DR</strong></td><td>BackupRadar / QNAP / Wasabi, Veeam, BDR, vérification post-maintenance</td><td>Triage guidé, preuve de protection, livrables client-safe</td></tr>
         <tr><td><strong>Maintenance</strong></td><td>Windows postcheck, pending reboot, estimation de fenêtres, redémarrages contrôlés</td><td>Fenêtres défendables, garde-fous, validation par rôle</td></tr>
       </tbody>
     </table>
@@ -611,7 +587,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
 <section class="cta-section" id="demo">
   <div class="cta-orb"></div>
   <h2>3 MSP pilotes<br><em>pour le lancement.</em></h2>
-  <p>Diagnostic opérationnel, installation du noyau, personnalisation des templates, formation et première campagne de cas. Les 3 MSP pilotes de lancement peuvent recevoir un rabais de démarrage en échange d’un retour terrain structuré.</p>
+  <p>Diagnostic opérationnel, installation du noyau, personnalisation des templates, formation et première campagne de cas. Les 3 MSP pilotes de lancement peuvent recevoir un rabais de démarrage en échange d'un retour terrain structuré.</p>
   <a href="mailto:contact@eaia.ca?subject=Démo%20MSP%20Intelligence%20OS" class="btn-gold">Demander une démo</a>
   <p class="cta-note">Produit phare EA IA · 33 agents · 123 fichiers opérationnels · lancement MSP Intelligence OS</p>
 </section>
@@ -624,14 +600,14 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
 <script>
 (function(){
   const slogans = [
-    "La prochaine étape de l’IA n’est pas une conversation. C’est une armée.",
+    "La prochaine étape de l'IA n'est pas une conversation. C'est une armée.",
     "Des agents IA qui connaissent votre métier. Pas des chatbots génériques.",
     "Chaque billet peut produire une preuve, une fois anonymisée et validée.",
     "Du signal brut au livrable client : le système garde la méthode.",
-    "Vos meilleurs réflexes MSP, structurés pour toute l’équipe.",
-    "Moins d’improvisation. Plus de garde-fous. Plus de livrables.",
+    "Vos meilleurs réflexes MSP, structurés pour toute l'équipe.",
+    "Moins d'improvisation. Plus de garde-fous. Plus de livrables.",
     "Le cerveau opérationnel des équipes MSP.",
-    "L’IA qui ne parle pas seulement : elle cadre, documente et capitalise."
+    "L'IA qui ne parle pas seulement : elle cadre, documente et capitalise."
   ];
   const el = document.getElementById('sloganRotator');
   if(!el) return;
@@ -643,7 +619,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
       el.textContent = slogans[i];
       el.classList.remove('is-changing');
     }, 350);
-  }, 5200);
+  }, 9000);
 })();
 </script>
 
