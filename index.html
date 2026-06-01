@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EA IA | MSP Intelligence OS — Plateforme MSP Intelligence IT</title>
+<meta name="description" content="MSP Intelligence OS — le système d'exploitation IA pour MSP et équipes TI. 24 agents spécialisés, runbooks, templates et scripts. L'IA qui guide : aucune connexion, aucun accès aux données, aucune exécution.">
+<meta property="og:title" content="EA|IA — MSP Intelligence OS · Intelligence artificielle opérationnelle">
+<meta property="og:description" content="Le cerveau opérationnel des équipes MSP. 24 agents spécialisés, runbooks, templates et scripts. L'IA qui guide — jamais celle qui agit à votre place.">
+<meta property="og:image" content="https://eaia.ca/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://eaia.ca">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EA|IA — MSP Intelligence OS">
+<meta name="twitter:description" content="Le cerveau opérationnel des équipes MSP. L'IA qui guide, documente et capitalise.">
+<meta name="twitter:image" content="https://eaia.ca/og-image.png">
+<link rel="icon" type="image/png" href="img/LOGO.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -121,7 +135,7 @@ nav {
   padding: 96px 64px 84px;
   background:
     linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.86) 42%, rgba(0,0,0,0.48) 72%, rgba(0,0,0,0.68) 100%),
-    url('../visuels/MSP_OS_Hero_16x9.png') center right / cover no-repeat;
+    url('assets/images/bg-hero-msp.png') center right / cover no-repeat;
   overflow: hidden;
 }
 .hero::before {
@@ -261,6 +275,71 @@ h1 .strong, .s-title strong { color: var(--white); font-weight: 600; }
 .btn-outline { border: 1px solid rgba(200,149,42,0.4); color: var(--gold); }
 .btn-outline:hover { border-color: var(--gold); background: var(--gold-dim); transform: translateY(-2px); }
 
+.trust-band {
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 78px 64px;
+}
+.trust-wrap { max-width: var(--max); margin: 0 auto; }
+.trust-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.trust-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+.trust-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4.4vw, 52px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+.trust-title em { font-style: italic; color: var(--gold-light); }
+.trust-lead {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 840px;
+  font-weight: 300;
+  margin-bottom: 48px;
+}
+.trust-lead strong { color: var(--white); font-weight: 600; }
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.trust-card { background: var(--dark2); padding: 34px 30px; position: relative; overflow: hidden; transition: background 0.25s; }
+.trust-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s; transform-origin: left; }
+.trust-card:hover { background: #121212; }
+.trust-card:hover::after { transform: scaleX(1); }
+.trust-card-mark {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 26px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.trust-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+.trust-card p { font-size: 13.5px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
 .firm-band {
   background: var(--dark2);
   border-top: 1px solid var(--border);
@@ -362,7 +441,13 @@ h1 .strong, .s-title strong { color: var(--white); font-weight: 600; }
 .mod-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
 .mod-desc { font-size: 13px; color: var(--muted); line-height: 1.75; font-weight: 300; }
 
-.arsenal { background: var(--dark2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.arsenal {
+  background:
+    linear-gradient(90deg, rgba(14,14,14,0.97) 0%, rgba(14,14,14,0.88) 46%, rgba(14,14,14,0.60) 100%),
+    url('assets/images/bg-cloud.png') center right / cover no-repeat;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
 .arsenal-grid { max-width: var(--max); margin: 48px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
 .arsenal-block { background: var(--dark); padding: 40px 32px; }
 .arsenal-n { font-family: 'Cormorant Garamond', serif; font-size: 68px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 4px; }
@@ -375,12 +460,28 @@ h1 .strong, .s-title strong { color: var(--white); font-weight: 600; }
 .case-table td { color: var(--muted); font-size: 14px; line-height: 1.7; font-weight: 300; }
 .case-table td strong { color: var(--white); font-weight: 600; }
 
-.quote-section { background: var(--dark2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 64px; text-align: center; }
+.quote-section {
+  background:
+    linear-gradient(rgba(8,8,8,0.88), rgba(8,8,8,0.93)),
+    url('assets/images/bg-echecs.png') center / cover no-repeat;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 96px 64px;
+  text-align: center;
+}
 .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 120px; color: rgba(200,149,42,0.08); line-height: 0.5; margin-bottom: 20px; font-style: italic; }
 .quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 300; font-style: italic; max-width: 960px; margin: 0 auto 28px; line-height: 1.55; color: var(--silver-light); }
 .quote-attr { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted2); letter-spacing: 3px; text-transform: uppercase; }
 
-.cta-section { padding: 120px 64px; text-align: center; position: relative; overflow: hidden; }
+.cta-section {
+  background:
+    linear-gradient(rgba(0,0,0,0.84), rgba(0,0,0,0.90)),
+    url('assets/images/bg-profil-ia.png') center / cover no-repeat;
+  padding: 120px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 .cta-orb { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; border-radius: 50%; border: 1px solid rgba(200,149,42,0.06); pointer-events: none; }
 .cta-orb::before { content: ''; position: absolute; inset: 60px; border-radius: 50%; border: 1px solid rgba(200,149,42,0.04); }
 .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 8vw, 98px); font-weight: 300; line-height: 0.95; margin-bottom: 28px; }
@@ -407,12 +508,15 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   .nav-links { display: none; }
 }
 @media (max-width: 960px) {
-  nav, .hero, .s-pad, .firm-band, .quote-section, .cta-section { padding-left: 24px; padding-right: 24px; }
+  nav, .hero, .s-pad, .firm-band, .trust-band, .quote-section, .cta-section { padding-left: 24px; padding-right: 24px; }
   .problem-inner { grid-template-columns: 1fr; gap: 40px; }
   .t-grid { grid-template-columns: 1fr; }
   .hero-metric { border-bottom: 1px solid var(--border); border-right: none; }
   footer { flex-direction: column; gap: 12px; text-align: center; }
   .footer-right { text-align: center; }
+}
+@media (max-width: 780px) {
+  .trust-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
   .modules-grid, .arsenal-grid { grid-template-columns: 1fr; }
@@ -431,6 +535,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
     <div class="nav-tagline">Intelligence artificielle opérationnelle</div>
   </a>
   <ul class="nav-links">
+    <li><a href="#confiance">Confiance</a></li>
     <li><a href="#preuve">Preuve</a></li>
     <li><a href="#pipeline">Pipeline</a></li>
     <li><a href="#livrables">Livrables</a></li>
@@ -444,9 +549,9 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   <div class="hero-orb"></div>
   <div class="hero-wrap">
 <div class="hero-label"><div class="hero-label-line"></div><div class="hero-label-text">Produit phare · EA IA · Lancement MSP</div></div>
-    <div class="hero-eyebrow">25 ans d'administration système et de formation  · une plateforme</div>
+    <div class="hero-eyebrow">25 ans d'administration système et de formation · une plateforme</div>
     <h1>MSP Intelligence OS<br><em>le cerveau opérationnel</em><br><span class="strong">des équipes MSP.</span></h1>
-    <div class="hero-product-tag">MSP INTELLIGENCE IT ·  24 AGENTS · 123 FICHIERS · 93 TEMPLATES · 30 SCRIPTS · UN AGENT POUR CHACUN</div>
+    <div class="hero-product-tag">MSP INTELLIGENCE IT · 24 AGENTS · 123 FICHIERS · 93 TEMPLATES · 30 SCRIPTS · UN AGENT POUR CHACUN</div>
     <p class="hero-slogan" id="sloganRotator">La prochaine étape de l'IA n'est pas une conversation. C'est une armée.</p>
     <p class="hero-sub">
       Le système d'exploitation IA pour MSP : une plateforme terrain qui transforme les billets en interventions guidées,
@@ -457,7 +562,7 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
       <div class="hero-metric"><div class="hero-metric-n">123</div><div class="hero-metric-l">Runbooks</div></div>
       <div class="hero-metric"><div class="hero-metric-n">93</div><div class="hero-metric-l">Templates</div></div>
       <div class="hero-metric"><div class="hero-metric-n">30</div><div class="hero-metric-l">Scripts</div></div>
-      <div class="hero-metric"><div class="hero-metric-n">5</div><div class="hero-metric-l">Pillers</div></div>
+      <div class="hero-metric"><div class="hero-metric-n">5</div><div class="hero-metric-l">Piliers</div></div>
     </div>
     <div class="hero-actions">
       <a href="#demo" class="btn-gold">Réserver une démonstration</a>
@@ -465,6 +570,31 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
     </div>
   </div>
 </header>
+
+<section class="trust-band" id="confiance">
+  <div class="trust-wrap">
+    <div class="trust-eyebrow">Souveraineté &amp; confiance</div>
+    <div class="trust-title">L'IA qui <em>guide</em>. Jamais celle qui <em>agit</em> à votre place.</div>
+    <p class="trust-lead">MSP Intelligence OS ne se connecte à <strong>aucun</strong> système, n'accède à <strong>aucune</strong> donnée client et n'exécute <strong>aucune</strong> commande. C'est une plateforme de méthode et de guidage : chaque geste reste sous le contrôle du technicien.</p>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-card-mark">⊘</div>
+        <div class="trust-card-title">Aucune connexion</div>
+        <p>Aucune intégration à vos RMM, PSA, serveurs ou consoles. L'outil travaille en isolation complète, hors de votre infrastructure.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-mark">⊘</div>
+        <div class="trust-card-title">Aucun accès aux données</div>
+        <p>Vos données restent chez vous. La plateforme ne lit, ne stocke et ne transfère aucune donnée client — elle travaille avec ce que le technicien choisit de lui fournir.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-mark">⊘</div>
+        <div class="trust-card-title">Aucune exécution</div>
+        <p>L'outil ne lance aucune commande et ne déclenche aucune action sur vos systèmes. Il guide, structure et documente — le technicien décide et exécute.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="firm-band">
   <div class="firm-band-left">
