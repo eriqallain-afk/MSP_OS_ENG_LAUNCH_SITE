@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="description" content="IT Intelligence OS par EA|IA — système opérationnel IA pour support TI interne, sysadmin solo et technicien N3 / escalade." />
+  <title>IT Intelligence OS | EA|IA</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-2: #0b0b0d;
+      --panel: rgba(255, 255, 255, 0.055);
+      --panel-2: rgba(255, 255, 255, 0.085);
+      --gold: #d7b46a;
+      --gold-2: #f2d99b;
+      --silver: #d8d8d8;
+      --muted: #a9a9a9;
+      --text: #f4f1ea;
+      --danger: #ffcc66;
+      --line: rgba(215, 180, 106, 0.28);
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(215, 180, 106, 0.18), transparent 34rem),
+        radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.08), transparent 28rem),
+        linear-gradient(180deg, #030303 0%, #080808 45%, #050505 100%);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-flag {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      text-align: center;
+      color: #17120a;
+      background: linear-gradient(90deg, var(--gold), var(--gold-2), var(--gold));
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.4rem 1.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-main {
+      font-size: clamp(1.65rem, 4vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+    }
+
+    .brand-main span {
+      color: var(--gold);
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .status-pill {
+      border: 1px solid var(--line);
+      color: var(--gold-2);
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(215, 180, 106, 0.08);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 1.25rem;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 3rem;
+      align-items: center;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--gold-2);
+      border: 1px solid var(--line);
+      background: rgba(215, 180, 106, 0.08);
+      border-radius: 999px;
+      padding: 0.52rem 0.82rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 22px var(--gold);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 8vw, 6.9rem);
+      max-width: 900px;
+    }
+
+    h1 .gold {
+      color: var(--gold);
+    }
+
+    .lead {
+      margin: 1.5rem 0 0;
+      max-width: 760px;
+      color: var(--silver);
+      font-size: clamp(1.12rem, 2.2vw, 1.45rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 850;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #15100a;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      box-shadow: 0 18px 45px rgba(215, 180, 106, 0.18);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .hero-card {
+      position: relative;
+      border: 1px solid rgba(215, 180, 106, 0.22);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.035)),
+        radial-gradient(circle at 20% 0%, rgba(215,180,106,0.25), transparent 18rem);
+      border-radius: 34px;
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(242,217,155,0.24), transparent 38%, rgba(255,255,255,0.08));
+      pointer-events: none;
+    }
+
+    .terminal {
+      position: relative;
+      background: rgba(3, 3, 3, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 26px;
+      padding: 1.25rem;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .line-item {
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.045);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .line-item strong {
+      display: block;
+      color: var(--gold-2);
+      margin-bottom: 0.35rem;
+    }
+
+    .line-item span {
+      color: var(--silver);
+      font-size: 0.94rem;
+    }
+
+    .section-head {
+      max-width: 820px;
+      margin-bottom: 2.25rem;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+    }
+
+    .section-head p {
+      margin: 1rem 0 0;
+      color: var(--silver);
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      min-height: 100%;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .card.featured {
+      border-color: rgba(215, 180, 106, 0.34);
+      background: linear-gradient(145deg, rgba(215, 180, 106, 0.11), rgba(255,255,255,0.045));
+    }
+
+    .card h3 {
+      font-size: 1.38rem;
+      margin-bottom: 0.8rem;
+      color: var(--gold-2);
+    }
+
+    .card p {
+      color: var(--silver);
+      margin: 0;
+    }
+
+    .card ul {
+      margin: 1rem 0 0;
+      padding-left: 1.05rem;
+      color: var(--silver);
+    }
+
+    .card li + li {
+      margin-top: 0.55rem;
+    }
+
+    .problem-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .problem {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 1rem;
+      color: var(--silver);
+    }
+
+    .problem::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      margin-top: 0.48rem;
+      flex: 0 0 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(215, 180, 106, 0.75);
+    }
+
+    .quote-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(215, 180, 106, 0.065);
+      max-width: none;
+      padding: 4rem 1.25rem;
+    }
+
+    .quote-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(1.75rem, 4vw, 3.2rem);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .quote-inner span {
+      color: var(--gold);
+    }
+
+    .workflow {
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 4.4rem;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      left: 1.2rem;
+      top: 1.35rem;
+      color: var(--gold-2);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .deliverables {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .tag {
+      border: 1px solid rgba(215, 180, 106, 0.28);
+      background: rgba(215, 180, 106, 0.075);
+      color: var(--gold-2);
+      border-radius: 999px;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.88rem;
+      font-weight: 750;
+    }
+
+    .cta {
+      text-align: center;
+      border: 1px solid rgba(215, 180, 106, 0.28);
+      background:
+        radial-gradient(circle at center top, rgba(215,180,106,0.18), transparent 28rem),
+        rgba(255,255,255,0.045);
+      border-radius: 36px;
+      padding: 3rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(2.1rem, 5vw, 4.4rem);
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 1rem auto 0;
+      color: var(--silver);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .dev-note {
+      margin-top: 1rem;
+      color: var(--danger);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 880px) {
+      header {
+        align-items: flex-start;
+      }
+
+      .status-pill {
+        display: none;
+      }
+
+      .hero,
+      .grid-2,
+      .grid-3,
+      .problem-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 3rem;
+      }
+
+      section {
+        padding: 3.5rem 1.05rem;
+      }
+
+      .terminal {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-flag">Page autonome non liée au site — brouillon produit pour validation</div>
+
+  <header aria-label="En-tête EAIA">
+    <div class="brand">
+      <div class="brand-main">EA<span>|</span>IA</div>
+      <div class="brand-sub">Intelligence artificielle opérationnelle</div>
+    </div>
+    <div class="status-pill">IT Intelligence OS</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Système opérationnel TI augmenté</div>
+        <h1>Une équipe TI augmentée dans ton <span class="gold">coffre à outils.</span></h1>
+        <p class="lead">
+          IT Intelligence OS transforme l’expérience terrain d’un administrateur système sénior en méthode exploitable : diagnostic, triage, scripts, documentation, escalade, maintenance, communication et livrables techniques.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#versions">Voir les versions</a>
+          <a class="btn btn-secondary" href="#livrables">Voir les livrables</a>
+        </div>
+        <p class="dev-note">Note interne : cette page n’est volontairement pas reliée au menu ni à l’index du site.</p>
+      </div>
+
+      <aside class="hero-card" aria-label="Aperçu opérationnel">
+        <div class="terminal">
+          <div class="terminal-top">
+            <span>EAIA / IT-OPS</span>
+            <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          </div>
+          <div class="line-item">
+            <strong>Triage structuré</strong>
+            <span>Clarifie le billet, identifie le périmètre, priorise les risques et prépare l’intervention.</span>
+          </div>
+          <div class="line-item">
+            <strong>Diagnostic guidé</strong>
+            <span>Oriente l’analyse : Windows, AD, M365, réseau, sauvegarde, performance, sécurité, maintenance.</span>
+          </div>
+          <div class="line-item">
+            <strong>Scripts contextualisés</strong>
+            <span>Produit des commandes et scripts adaptés au contexte, avec validation avant exécution.</span>
+          </div>
+          <div class="line-item">
+            <strong>Livrables propres</strong>
+            <span>Génère notes techniques, rapports, communications, RCA et documentation réutilisable.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="probleme">
+      <div class="section-head">
+        <h2>Le problème TI n’est pas le manque d’outils.</h2>
+        <p>Le vrai problème, c’est le manque de structure quand le billet arrive croche, que le serveur tousse, que l’utilisateur panique, et que le N3 hérite d’un casse-tête sans contexte.</p>
+      </div>
+      <div class="problem-list">
+        <div class="problem">Les billets sont souvent incomplets, émotionnels ou techniquement flous.</div>
+        <div class="problem">Les diagnostics changent selon la personne qui prend le ticket.</div>
+        <div class="problem">Les scripts utiles sont dispersés dans des dossiers, des notes, des souvenirs ou des anciens billets.</div>
+        <div class="problem">Les escalades arrivent trop tard, avec trop peu de contexte.</div>
+        <div class="problem">La documentation est faite après coup, quand tout le monde est déjà passé à autre chose.</div>
+        <div class="problem">Le savoir des seniors reste dans leur tête au lieu de devenir un actif opérationnel.</div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="quote-inner">
+        IT Intelligence OS ne remplace pas le technicien. Il transforme son expérience en <span>méthode</span>, sa méthode en <span>livrable</span>, et son livrable en <span>valeur</span>.
+      </div>
+    </section>
+
+    <section id="versions">
+      <div class="section-head">
+        <h2>Trois versions. Même moteur opérationnel.</h2>
+        <p>La base reste la même : aider le travail TI réel. Pas du théâtre IA. Pas un chatbot décoratif. Un système pour structurer, produire et accélérer.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card featured">
+          <h3>Version Support TI interne</h3>
+          <p>Pour les équipes de support qui doivent recevoir, qualifier, résoudre, documenter et escalader sans perdre le fil.</p>
+          <ul>
+            <li>Triage initial des demandes.</li>
+            <li>Réponses utilisateurs plus propres.</li>
+            <li>Escalades mieux préparées.</li>
+            <li>Standardisation des notes et suivis.</li>
+            <li>Réduction du bruit opérationnel.</li>
+          </ul>
+        </article>
+
+        <article class="card featured">
+          <h3>Version Sysadmin Solo</h3>
+          <p>Pour l’administrateur système qui porte trop de chapeaux et qui veut un second cerveau technique, structuré et toujours disponible.</p>
+          <ul>
+            <li>Diagnostic assisté.</li>
+            <li>Préparation de scripts.</li>
+            <li>Planification de changements.</li>
+            <li>Documentation rapide.</li>
+            <li>Validation avant action sensible.</li>
+          </ul>
+        </article>
+
+        <article class="card featured">
+          <h3>Version Technicien N3 / Escalade</h3>
+          <p>Pour les cas complexes où il faut aller vite, mais pas n’importe comment. Analyse, contexte, hypothèses, preuves, plan d’action.</p>
+          <ul>
+            <li>Analyse de billets complexes.</li>
+            <li>Hypothèses techniques classées.</li>
+            <li>RCA et post-mortem.</li>
+            <li>Préchecks et rollback plans.</li>
+            <li>Livrables exécutifs et techniques.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="capacites">
+      <div class="section-head">
+        <h2>Ce que le système produit concrètement.</h2>
+        <p>Le but n’est pas de jaser avec une IA. Le but est de sortir du travail utilisable : commandes, plans, rapports, messages, contrôles et décisions mieux structurées.</p>
+      </div>
+
+      <div class="grid grid-2 workflow">
+        <article class="card step">
+          <h3>Comprendre le contexte</h3>
+          <p>Reformule la demande, détecte les angles morts, clarifie les symptômes, identifie le risque et propose les prochaines vérifications.</p>
+        </article>
+        <article class="card step">
+          <h3>Guider le diagnostic</h3>
+          <p>Structure l’analyse par couches : utilisateur, poste, réseau, identité, service, serveur, sauvegarde, sécurité, applicatif.</p>
+        </article>
+        <article class="card step">
+          <h3>Produire les actions</h3>
+          <p>Génère commandes, scripts, checklist, plan d’intervention, séquence de changement et points de validation.</p>
+        </article>
+        <article class="card step">
+          <h3>Documenter proprement</h3>
+          <p>Transforme l’intervention en note claire, rapport technique, résumé exécutif, communication utilisateur ou base de connaissance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="livrables">
+      <div class="section-head">
+        <h2>Livrables possibles.</h2>
+        <p>Chaque livrable est pensé pour sauver du temps, réduire les erreurs et rendre le travail TI plus transmissible.</p>
+      </div>
+
+      <div class="deliverables">
+        <span class="tag">Notes de billet structurées</span>
+        <span class="tag">Scripts PowerShell</span>
+        <span class="tag">Plans de diagnostic</span>
+        <span class="tag">Checklists de maintenance</span>
+        <span class="tag">Préchecks techniques</span>
+        <span class="tag">Plans de rollback</span>
+        <span class="tag">RCA / post-mortem</span>
+        <span class="tag">Communications utilisateurs</span>
+        <span class="tag">Rapports d’intervention</span>
+        <span class="tag">Documentation interne</span>
+        <span class="tag">Procédures réutilisables</span>
+        <span class="tag">Analyse d’escalade N3</span>
+      </div>
+    </section>
+
+    <section id="garde-fous">
+      <div class="section-head">
+        <h2>Garde-fous opérationnels.</h2>
+        <p>Un système TI sérieux ne doit pas seulement répondre vite. Il doit aider à ne pas faire de dégâts vite. Nuance importante.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Validation avant action</h3>
+          <p>Les commandes sensibles doivent être comprises, adaptées, vérifiées et exécutées par un humain compétent.</p>
+        </article>
+        <article class="card">
+          <h3>Traçabilité</h3>
+          <p>Les décisions, hypothèses, résultats de tests et changements proposés sont structurés pour être relus.</p>
+        </article>
+        <article class="card">
+          <h3>Approche terrain</h3>
+          <p>Le système est conçu autour des réalités TI : urgence, ambiguïté, interruption, dette documentaire et pression opérationnelle.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta">
+        <h2>Un moteur TI. Plusieurs usages.</h2>
+        <p>
+          IT Intelligence OS est la base opérationnelle. Les versions Support TI interne, Sysadmin Solo et Technicien N3 / Escalade peuvent être présentées séparément selon le public visé.
+        </p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="mailto:info@ea-ia.ca?subject=Demande%20d'information%20-%20IT%20Intelligence%20OS">Contacter EA|IA</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>EA|IA — Intelligence artificielle opérationnelle</div>
+    <div>Page brouillon autonome — non liée au site existant</div>
+  </footer>
+</body>
+</html>
