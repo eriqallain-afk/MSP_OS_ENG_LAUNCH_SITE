@@ -20,7 +20,7 @@ C'est un système de 6 agents spécialisés qui :
 → génèrent le livrable client-safe
 → clôturent proprement
 
-22 cas terrain anonymisés. Disponibles maintenant.
+20 cas terrain. Disponibles maintenant.
 
 Pas une démo de laboratoire. Des interventions réelles.
 
