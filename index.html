@@ -462,7 +462,7 @@ h1 .strong, .s-title strong { color: var(--white); font-weight: 600; }
 .quote-section {
   background:
     linear-gradient(rgba(8,8,8,0.72), rgba(8,8,8,0.78)),
-    url('assets/images/bg-echecs.png') center / cover no-repeat;
+    url('assets/images/bg-echec2s.png') center / cover no-repeat;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 96px 64px;
@@ -631,9 +631,10 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
     </div>
     <div class="problem-pains">
       <div class="pain-item"><div class="pain-icon">01</div><div class="pain-text"><strong>Billets mal qualifiés.</strong> Le contexte est incomplet, les priorités se mélangent, le technicien recommence l'analyse à zéro.</div></div>
-      <div class="pain-item"><div class="pain-icon">02</div><div class="pain-text"><strong>Documentation inégale.</strong> La qualité des notes dépend du temps, du niveau et de la discipline du technicien.</div></div>
+      <div class="pain-item"><div class="pain-icon">02</div><div class="pain-text"><strong>Documentation inégale — et non facturable.</strong> La qualité des notes dépend du technicien et du temps disponible. Le résumé qui apparaîtra sur la facture client n'est pas rédigé pour lui — il est rédigé pour le système interne.</div></div>
       <div class="pain-item"><div class="pain-icon">03</div><div class="pain-text"><strong>Escalades floues.</strong> Les seniors reçoivent des cas sans precheck clair, sans risque isolé, sans ligne de décision propre.</div></div>
       <div class="pain-item"><div class="pain-icon">04</div><div class="pain-text"><strong>Valeur invisible.</strong> Le MSP travaille fort, mais le client ne voit pas toujours la profondeur réelle de l'intervention.</div></div>
+      <div class="pain-item"><div class="pain-icon">05</div><div class="pain-text"><strong>Observations sans suite.</strong> Durant l'intervention, le technicien remarque d'autres problèmes non liés au billet — un patch manquant, un service instable, une configuration à risque. Sans système de capture, ces observations restent sans action. Le billet est fermé. Les problèmes demeurent.</div></div>
     </div>
   </div>
   <div class="content-wrap">
@@ -650,7 +651,8 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
           <div class="t-line t-gray">// SORTIE MSP INTELLIGENCE OS</div>
           <div class="t-line"><span class="t-green">✓ Agent spécialiste sélectionné parmi 24 rôles</span></div>
           <div class="t-line"><span class="t-green">✓ Runbook / template / script associé appliqué</span></div>
-          <div class="t-line"><span class="t-green">✓ Note interne + discussion client + postcheck + cas capitalisable</span></div>
+          <div class="t-line"><span class="t-green">✓ Note interne + résumé facturable client + postcheck + cas capitalisable</span></div>
+          <div class="t-line"><span class="t-green">✓ Observations hors billet capturées → tâches distinctes créées</span></div>
           <div class="t-line"><span class="t-gold">RÉSULTAT :</span> <span class="t-white">INTERVENTION GUIDÉE, TRAÇABLE, FACTURABLE</span> <span class="cursor"></span></div>
         </div>
       </div>
@@ -674,6 +676,34 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   </div>
 </section>
 
+<section class="s-pad dark-band" id="remplace">
+  <div class="content-wrap">
+    <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Ce que ça remplace</div></div>
+    <div class="s-title">Pas un outil de plus.<br><em>Un système à la place de trois.</em></div>
+    <p class="s-sub">MSP Intelligence OS n'est pas une couche supplémentaire — il remplace des processus coûteux que votre équipe absorbe sans les voir.</p>
+  </div>
+  <div class="modules-grid" style="max-width:var(--max);margin:48px auto 0">
+    <div class="mod-card">
+      <div class="mod-n">Remplace</div>
+      <div class="mod-name">Le scribe interne</div>
+      <div class="mod-sub">Documentation manuelle · KB · notes ConnectWise</div>
+      <div class="mod-desc">Notes internes, discussions client-safe, KB, postmortems — générés à la clôture, pas après. Plus de documentation variable selon le technicien ou le temps disponible.</div>
+    </div>
+    <div class="mod-card">
+      <div class="mod-n">Remplace</div>
+      <div class="mod-name">L'IA générique</div>
+      <div class="mod-sub">ChatGPT · Copilot · assistants non spécialisés MSP</div>
+      <div class="mod-desc">Un GPT générique ne connaît pas ConnectWise, Hudu, Veeam, N-central ni l'anatomie d'une escalade MSP. MSP Intelligence OS est construit sur 25 ans de terrain — chaque agent connaît votre métier.</div>
+    </div>
+    <div class="mod-card">
+      <div class="mod-n">Remplace</div>
+      <div class="mod-name">L'improvisation quotidienne</div>
+      <div class="mod-sub">Chaque technicien qui réinvente la méthode</div>
+      <div class="mod-desc">Sans système, chaque billet complexe est résolu différemment selon le technicien. MSP Intelligence OS uniformise la méthode, les garde-fous et les livrables — du junior au senior.</div>
+    </div>
+  </div>
+</section>
+
 <section class="arsenal s-pad" id="livrables">
   <div class="content-wrap">
     <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Preuve produit</div></div>
@@ -690,11 +720,41 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
   </div>
 </section>
 
+<section class="s-pad dark-band" id="roi">
+  <div class="content-wrap">
+    <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Temps et retour</div></div>
+    <div class="s-title">Chaque billet<br><em>coûte moins cher à traiter.</em></div>
+    <p class="s-sub">Un technicien documente manuellement entre 20 et 45 minutes par billet complexe — en livrables seulement. MSP Intelligence OS compresse cette charge à quelques minutes et augmente la qualité en même temps.</p>
+  </div>
+  <div class="arsenal-grid" style="max-width:var(--max);margin:48px auto 0;grid-template-columns:repeat(4,1fr)">
+    <div class="arsenal-block">
+      <div class="arsenal-n" style="font-size:clamp(44px,5vw,64px)">–75<span style="font-size:clamp(22px,2.5vw,32px)">%</span></div>
+      <div class="arsenal-unit">Temps de documentation</div>
+      <div class="arsenal-desc">Notes internes + résumé facturable client générés à la clôture — structurés, corrigés, prêts à mettre sur la facture. De 30–40 min à moins de 8 min.</div>
+    </div>
+    <div class="arsenal-block">
+      <div class="arsenal-n">J+1</div>
+      <div class="arsenal-unit">Junior opérationnel</div>
+      <div class="arsenal-desc">Runbooks, garde-fous et séquences dès le premier billet. Fini les 3 mois avant d'envoyer un junior sur un cas N2.</div>
+    </div>
+    <div class="arsenal-block">
+      <div class="arsenal-n">0</div>
+      <div class="arsenal-unit">Escalade sans contexte</div>
+      <div class="arsenal-desc">Chaque escalade arrive qualifiée : risque isolé, precheck fait, ligne de décision propre. Le senior ne recommence pas à zéro.</div>
+    </div>
+    <div class="arsenal-block">
+      <div class="arsenal-n" style="font-size:clamp(44px,5vw,64px)">349<span style="font-size:clamp(14px,1.8vw,22px)">$</span></div>
+      <div class="arsenal-unit">Par mois — à partir de</div>
+      <div class="arsenal-desc">Moins que 2 heures de temps senior. Pour toute votre équipe, chaque jour, sur chaque billet.</div>
+    </div>
+  </div>
+</section>
+
 <section class="s-pad">
   <div class="content-wrap">
     <div class="s-label"><div class="s-label-line"></div><div class="s-label-text">Bibliothèque de cas anonymisés</div></div>
     <div class="s-title">Des preuves terrain prêtes<br>à être <em>activées.</em></div>
-    <p class="s-sub">Les cas ont été anonymisés et préparés comme matière de démonstration. Ils ne sont pas présentés ici comme des pages publiques déjà activées dans le repo : cette section sert de vitrine de capacité et de réserve de preuves à publier progressivement.</p>
+    <p class="s-sub">Plus de 20 cas terrain issus d'interventions réelles MSP, anonymisés et structurés : symptôme, diagnostic, résolution, preuve. Six familles d'intervention couvertes — chacune avec l'agent concerné, les garde-fous appliqués et le livrable généré.</p>
     <table class="case-table">
       <thead><tr><th>Famille</th><th>Exemples de cas</th><th>Valeur démontrée</th></tr></thead>
       <tbody>
@@ -706,8 +766,9 @@ footer { border-top: 1px solid var(--border); padding: 36px 64px; display: flex;
         <tr><td><strong>Maintenance</strong></td><td>Windows postcheck, pending reboot, estimation de fenêtres, redémarrages contrôlés</td><td>Fenêtres défendables, garde-fous, validation par rôle</td></tr>
       </tbody>
     </table>
-    <p class="s-sub" style="margin-top:24px;color:var(--muted2);font-size:13px;max-width:900px;">Note : les cas sont considérés comme contenu préparé et anonymisé. Leur activation publique doit rester volontaire, contrôlée et cohérente avec la navigation finale du site.</p>
-  </div>
+    <div style="margin-top:28px">
+      <a class="btn-outline" href="pages/msp-demos.html">Voir les cas terrain →</a>
+    </div>
 </section>
 
 <div class="quote-section">
