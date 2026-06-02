@@ -33,6 +33,7 @@
   <div class="eyebrow">Une personne · vingt-quatre spécialités · une plateforme</div>
   <h1>L'équipe TI au complet,<br><em>même quand vous êtes</em><br><strong>une seule personne.</strong></h1>
   <div class="product-tag">MSP INTELLIGENCE OS · POUR LES DÉPARTEMENTS TI INTERNES ET PME</div>
+  <p class="hero-slogan" id="entSlogan" style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,26px);font-style:italic;color:var(--gold-light);line-height:1.3;margin:-18px 0 30px;max-width:900px;transition:opacity .35s ease,transform .35s ease">La lacune MSP, comblée.</p>
   <p class="hero-sub"><strong>Vous n'êtes pas un MSP — mais vous portez la même charge.</strong> AD, Microsoft 365, sauvegarde, sécurité, réseau, onboarding, conformité. MSP Intelligence OS donne à votre équipe interne 24 spécialistes IA qui guident, protègent et documentent chaque intervention. L'outil ne se connecte à rien et n'exécute rien : votre technicien garde le contrôle total.</p>
   <div class="metrics">
     <div class="metric"><div class="metric-n">24</div><div class="metric-l">Spécialistes IA</div></div>
@@ -192,5 +193,34 @@
   <div class="footer-brand"><span class="ea">EA</span><span class="sep"> | </span><span class="ia">IA</span></div>
   <div class="footer-right">EA|IA — MSP Intelligence OS pour équipes TI internes<br>L'IA qui guide, protège et documente · © 2026 · info@ea-ia.ca</div>
 </footer>
+
+<script>
+(function(){
+  const slogans = [
+    "La lacune MSP, comblée.",
+    "Vous n'avez pas d'équipe MSP. Vous avez mieux : 24 spécialistes guidés.",
+    "Une personne. Vingt-quatre spécialités. Zéro improvisation.",
+    "Onboarding sans oubli. Conformité sans consultant.",
+    "Le savoir reste dans l'entreprise — même quand le technicien part.",
+    "Un départ d'admin sans accès oublié, c'est un trou de sécurité fermé.",
+    "Votre questionnaire de cyber-assurance, prêt à soumettre.",
+    "Opérez comme une équipe de haut niveau — sans en embaucher dix."
+  ];
+  const el = document.getElementById('entSlogan');
+  if(!el) return;
+  let i = 0;
+  setInterval(() => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(4px)';
+    setTimeout(() => {
+      i = (i + 1) % slogans.length;
+      el.textContent = slogans[i];
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 350);
+  }, 9000);
+})();
+</script>
+
 </body>
 </html>
