@@ -59,7 +59,7 @@
 **X · 09 — Démo**
 > Démo 30 min.
 > On traite un billet réel. Pas de slides.
-> → info@ea-ia.ca #MSP #Demo #EAIA
+> → eric_allain@oulook.com #MSP #Demo #EAIA
 
 ---
 
