@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clarification — MSP Intelligence OS vs Copilot Graph | EA IA</title>
+<meta name="description" content="Clarification importante : MSP Intelligence OS n'est pas un Copilot branché à Microsoft Graph. L'outil ne lit pas les données client; il encadre ce que le technicien fournit.">
+<meta property="og:title" content="MSP Intelligence OS — Clarification sécurité et données">
+<meta property="og:description" content="Pas Graph. Pas SharePoint. Pas exécution automatique. MSP Intelligence OS guide le technicien et contrôle les entrées sensibles.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="LOGO.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#000;--dark:#080808;--dark2:#0e0e0e;--dark3:#141414;--gold:#c8952a;--gold-light:#e4b84a;--silver:#b8bcc8;--silver-light:#d8dce8;--white:#fff;--muted:rgba(255,255,255,.58);--muted2:rgba(255,255,255,.28);--border:rgba(200,149,42,.2);--border2:rgba(255,255,255,.08);--ok:#79d28b;--warn:#f2be61;--risk:#ff6b6b;--max:1160px}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--black);color:var(--white);font-family:Outfit,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.7;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(200,149,42,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,149,42,.04) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0}body:after{content:"";position:fixed;inset:0;background:radial-gradient(circle at 78% 16%,rgba(200,149,42,.10),transparent 32%),radial-gradient(circle at 12% 72%,rgba(200,149,42,.045),transparent 30%);pointer-events:none;z-index:0}nav,header,section,footer{position:relative;z-index:1}a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}nav{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:22px 64px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:100;backdrop-filter:blur(24px)}.nav-brand{display:flex;flex-direction:column;gap:2px}.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;letter-spacing:4px;line-height:1}.nav-logo-text .ea{color:var(--gold)}.nav-logo-text .sep{color:rgba(200,149,42,.5);margin:0 2px}.nav-logo-text .ia{color:var(--silver-light)}.nav-tagline{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(200,149,42,.55);letter-spacing:3px;text-transform:uppercase;white-space:nowrap}.nav-links{display:flex;gap:28px;list-style:none;align-items:center}.nav-links a{color:var(--muted);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}.nav-links a:hover{color:var(--gold-light)}.nav-cta{border:1px solid var(--gold);color:var(--gold);padding:10px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}.nav-cta:hover{background:var(--gold);color:var(--black)}.hero{padding:92px 64px 72px;border-bottom:1px solid var(--border);background:linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.72)),radial-gradient(circle at 78% 28%,rgba(200,149,42,.14),transparent 34%)}.label{display:flex;align-items:center;gap:16px;margin-bottom:30px}.label-line{width:48px;height:1px;background:var(--gold)}.label-text{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold-light);letter-spacing:4px;text-transform:uppercase}.eyebrow{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--silver);letter-spacing:8px;text-transform:uppercase;margin-bottom:20px}.hero h1,.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,7vw,92px);font-weight:300;line-height:.96;letter-spacing:-1px;max-width:1080px;margin-bottom:24px}.hero h1 em,.section-title em{font-style:italic;color:var(--gold-light)}.hero h1 strong,.section-title strong{font-weight:600;color:var(--white)}.lead{font-size:19px;color:var(--muted);max-width:900px;line-height:1.86;font-weight:300}.lead strong{color:var(--white);font-weight:600}.actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:40px}.btn-gold,.btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:15px 34px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:.25s}.btn-gold{background:var(--gold);color:var(--black);border:1px solid var(--gold)}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}.btn-outline{border:1px solid rgba(200,149,42,.42);color:var(--gold-light);background:transparent}.btn-outline:hover{border-color:var(--gold);background:rgba(200,149,42,.14)}.band{padding:92px 64px}.dark{background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.section-title{font-size:clamp(38px,5.8vw,72px);margin-bottom:24px}.sub{color:var(--muted);font-size:16px;max-width:860px;line-height:1.84;font-weight:300}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:44px}.card{background:var(--dark);padding:32px 28px;min-height:230px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.25s}.card:hover:before{transform:scaleX(1)}.card-mark{font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--gold-light);margin-bottom:18px}.card-title{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.3px;margin-bottom:10px}.card p{font-size:14px;color:var(--muted);line-height:1.76;font-weight:300}.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:46px}.compare-col{background:var(--dark);padding:36px 32px}.compare-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;color:var(--gold-light)}.compare-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;margin-bottom:18px}.compare ul,.checks ul{list-style:none;display:flex;flex-direction:column;gap:13px}.compare li,.checks li{color:var(--muted);font-size:14.5px;line-height:1.65;padding-left:28px;position:relative}.compare li:before,.checks li:before{position:absolute;left:0;top:0;color:var(--gold-light);font-family:'JetBrains Mono',monospace}.compare .risk li:before{content:"×";color:var(--risk)}.compare .safe li:before,.checks li:before{content:"✓";color:var(--ok)}.checks{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:start;margin-top:46px}.terminal{background:#050505;border:1px solid rgba(200,149,42,.25);padding:28px;position:relative}.terminal:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}.t-bar{display:flex;gap:8px;margin-bottom:22px;align-items:center}.t-dot{width:9px;height:9px;border-radius:50%}.t-dot:nth-child(1){background:#ff5f57}.t-dot:nth-child(2){background:#febc2e}.t-dot:nth-child(3){background:#28c840}.t-bar-title{margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.28);letter-spacing:2px}.t-line{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.9}.t-gray{color:rgba(255,255,255,.3)}.t-gold{color:var(--gold-light)}.t-white{color:var(--white)}.t-green{color:#4ade80}.quote{padding:76px 64px;text-align:center;background:var(--dark3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.quote p{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.5vw,52px);font-weight:300;line-height:1.14;max-width:960px;margin:0 auto}.quote strong{color:var(--gold-light);font-style:italic;font-weight:400}footer{padding:34px 64px;color:var(--muted2);display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--border)}.footer-brand{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:4px;color:var(--gold-light)}@media(max-width:900px){nav{padding:18px 24px}.nav-links{display:none}.hero,.band,.quote,footer{padding-left:24px;padding-right:24px}.grid,.compare,.checks{grid-template-columns:1fr}.hero h1{font-size:52px}.section-title{font-size:44px}footer{flex-direction:column}.nav-tagline{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-text"><span class="ea">EA</span><span class="sep"> | </span><span class="ia">IA</span></div>
+    <div class="nav-tagline">Intelligence artificielle opérationnelle</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#difference">Différence</a></li>
+    <li><a href="#verifications">Vérifications</a></li>
+    <li><a href="#message">Message clair</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:eric_allain@outlook.com?subject=D%C3%A9mo%20MSP%20Intelligence%20OS">Démo — 30 min</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label"><div class="label-line"></div><div class="label-text">Clarification sécurité · Données · Microsoft Graph</div></div>
+    <div class="eyebrow">MSP Intelligence OS n'est pas un Copilot branché au tenant client</div>
+    <h1>Pas Graph.<br><em>Pas SharePoint.</em><br><strong>Pas exécution automatique.</strong></h1>
+    <p class="lead"><strong>MSP Intelligence OS ne lit pas les données du client.</strong> Il encadre plutôt ce que le technicien MSP choisit de lui fournir : billets, symptômes, journaux, sorties de commandes, contexte technique et validations nécessaires. La différence est majeure.</p>
+    <div class="actions">
+      <a href="#difference" class="btn-gold">Voir la distinction</a>
+      <a href="index.html#demo" class="btn-outline">Demander une démo</a>
+    </div>
+  </div>
+</header>
+
+<section class="band dark" id="difference">
+  <div class="wrap">
+    <div class="label"><div class="label-line"></div><div class="label-text">Deux réalités à ne pas mélanger</div></div>
+    <div class="section-title"><strong>Copilot amplifie les accès.</strong><br>IT OS encadre <em>les entrées technicien.</em></div>
+    <p class="sub">Une IA intégrée à Microsoft 365 peut exploiter les contenus accessibles à l'utilisateur selon les permissions existantes. Dans un tenant mal gouverné, elle peut révéler rapidement le désordre : SharePoint trop ouvert, données non étiquetées, absence de RBAC, comptes privilégiés trop larges. MSP Intelligence OS fonctionne dans une logique différente : il ne parcourt pas le tenant; il travaille avec le contexte volontairement fourni par le technicien.</p>
+
+    <div class="compare">
+      <div class="compare-col risk">
+        <div class="compare-label">IA intégrée au tenant client</div>
+        <div class="compare-title">Copilot / Graph / données internes</div>
+        <ul>
+          <li>Peut s'appuyer sur les permissions Microsoft 365 existantes.</li>
+          <li>Peut faire ressortir des documents trop largement accessibles.</li>
+          <li>Dépend fortement de SharePoint, Teams, OneDrive, Purview, DLP, RBAC et des étiquettes.</li>
+          <li>Le risque principal est l'exposition de données déjà mal gouvernées.</li>
+        </ul>
+      </div>
+      <div class="compare-col safe">
+        <div class="compare-label">MSP Intelligence OS</div>
+        <div class="compare-title">Guidage opérationnel MSP</div>
+        <ul>
+          <li>Ne se connecte pas à Microsoft Graph.</li>
+          <li>Ne parcourt pas SharePoint, OneDrive, Teams ou les courriels client.</li>
+          <li>Ne lance aucune commande et ne déclenche aucune action automatique.</li>
+          <li>Le risque principal est contrôlé à l'entrée : ce que le technicien colle dans l'outil.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="verifications">
+  <div class="wrap">
+    <div class="label"><div class="label-line"></div><div class="label-text">Ce que IT OS vérifie</div></div>
+    <div class="section-title">L'outil ne connaît pas les données client.<br><em>Il connaît les catégories dangereuses.</em></div>
+    <p class="sub">MSP Intelligence OS est conçu pour reconnaître les éléments sensibles typiques d'une intervention MSP et éviter qu'ils se retrouvent dans les mauvais livrables. Il ne remplace pas la discipline du technicien; il la force à rester visible.</p>
+
+    <div class="checks">
+      <div>
+        <ul>
+          <li>Détection ou retrait des mots de passe, secrets, tokens et clés API.</li>
+          <li>Masquage ou exclusion des IP et identifiants techniques dans les sorties client.</li>
+          <li>Séparation entre note interne, résumé client-safe, KB et rapport.</li>
+          <li>Refus d'inventer une information absente : l'outil demande les données manquantes.</li>
+          <li>Demande de preuve avant action : symptômes, logs, impact, validation.</li>
+          <li>Pour les gestes risqués : backup, fenêtre de maintenance, rollback et critère de succès.</li>
+          <li>Transformation du billet en intervention guidée, traçable et facturable.</li>
+        </ul>
+      </div>
+      <div class="terminal">
+        <div class="t-bar"><div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div><div class="t-bar-title">MSP-INTELLIGENCE-OS · INPUT CONTROL</div></div>
+        <div class="t-line t-gray">// ENTRÉE TECHNICIEN</div>
+        <div class="t-line"><span class="t-gold">CONTEXTE :</span> <span class="t-white">billet, logs, symptômes, sorties PowerShell</span></div>
+        <div class="t-line"><span class="t-gold">RISQUES :</span> <span class="t-white">IP, credentials, token, nom client, action sensible</span></div>
+        <br>
+        <div class="t-line t-gray">// SORTIE IT OS</div>
+        <div class="t-line t-green">✓ garde-fous appliqués</div>
+        <div class="t-line t-green">✓ données sensibles retirées ou isolées</div>
+        <div class="t-line t-green">✓ validations demandées</div>
+        <div class="t-line t-green">✓ livrables client-safe générés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap">
+    <div class="label"><div class="label-line"></div><div class="label-text">Positionnement clair</div></div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-mark">01</div>
+        <div class="card-title">Pas un aspirateur de données</div>
+        <p>La plateforme ne fouille pas dans les documents, les courriels, les bibliothèques SharePoint ou les espaces Teams du client.</p>
+      </div>
+      <div class="card">
+        <div class="card-mark">02</div>
+        <div class="card-title">Pas un robot d'exécution</div>
+        <p>Elle ne clique pas dans vos consoles, ne pousse pas de script et ne modifie pas votre infrastructure. Le technicien garde le contrôle.</p>
+      </div>
+      <div class="card">
+        <div class="card-mark">03</div>
+        <div class="card-title">Un système de méthode</div>
+        <p>Elle structure l'intervention : diagnostic, garde-fous, runbook, précheck, postcheck, communication et capitalisation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="message">
+  <p><strong>Copilot révèle les failles de gouvernance documentaire.</strong><br>MSP Intelligence OS encadre les opérations MSP sans se connecter au tenant client.</p>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="label"><div class="label-line"></div><div class="label-text">Formulation officielle</div></div>
+    <div class="section-title">La phrase à retenir.</div>
+    <p class="lead"><strong>MSP Intelligence OS n'est pas une IA connectée aux données du client.</strong> Il ne lit pas Microsoft Graph, ne parcourt pas SharePoint, ne se connecte pas aux serveurs et n'exécute aucune commande. Il travaille uniquement avec le contexte fourni par le technicien, puis applique des garde-fous MSP : données sensibles, credentials, IP, validations, backup, rollback, communication client-safe et traçabilité.</p>
+    <div class="actions">
+      <a href="index.html" class="btn-outline">Retour au site de lancement</a>
+      <a href="index.html#demo" class="btn-gold">Demander une démo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">EA<span>|</span><em>IA</em></div>
+  <div>MSP Intelligence OS — Clarification sécurité et données<br>© 2026 EA IA — Tous droits réservés</div>
+</footer>
+</body>
+</html>
