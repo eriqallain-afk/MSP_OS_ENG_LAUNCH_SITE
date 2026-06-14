@@ -818,21 +818,25 @@ footer img.footer-logo {
     max-width: 210px !important;
   }
 }
+/* Image optionnelle par section : ajouter style="--section-bg: linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.82)), url('../img/nom.png') center/cover no-repeat" sur la balise <section> */
+section { background: var(--section-bg, transparent); background-size: cover; background-position: center; background-repeat: no-repeat; }
+
 </style>
 </head>
 <body>
 <nav>
-<a aria-label="EA IA — Accueil" class="nav-brand" href="https://www.ea-ia.ca">
-    <div class="nav-name"><span class="ea">EA</span> | <span class="ia">IA</span></div>
-    <span class="nav-tagline">Intelligence artificielle opérationnelle</span>
+  <a href="https://www.ea-ia.ca" class="nav-brand">
+    <div class="nav-logo-text"><span class="ea">EA</span><span class="sep"> | </span><span class="ia">IA</span></div>
+    <div class="nav-tagline">Intelligence artificielle opérationnelle</div>
   </a>
-<ul class="nav-links">
-<li><a href="#cas">Cas</a></li>
-<li><a href="#diagnostic">Diagnostic</a></li>
-<li><a href="#pipeline">Pipeline</a></li>
-<li><a href="#livrables">Livrables</a></li>
-</ul>
-<a class="nav-cta" href="#contact">Démo — 30 min</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil MSP</a></li>
+    <li><a href="msp-demos.html">Cas terrain</a></li>
+    <li><a href="../clarification-copilot-vs-it-os.html">Sécurité</a></li>
+    <li><a href="../entreprises.html">Entreprises</a></li>
+    <li><a href="../msp-preview.html#tarifs">Tarif</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:info@ea-ia.ca?subject=D%C3%A9mo%20MSP%20Intelligence%20OS">Démo — 30 min</a>
 </nav>
 <section class="hero" id="cas">
 <div class="hero-orb"></div>
