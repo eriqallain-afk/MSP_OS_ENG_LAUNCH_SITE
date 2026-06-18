@@ -1,0 +1,28 @@
+name: Anonymisation (gate bloquant)
+
+# Empêche tout billet réel / motif non anonymisé d'atteindre `main`.
+# Règle EA|IA (CLAUDE_GLOBAL §6.10) : 0 occurrence avant mise en ligne.
+# Pour rendre ce contrôle VRAIMENT bloquant : Settings → Branches → Branch protection
+# rule sur `main` → Require status checks → cocher "scan-anonymisation".
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  scan-anonymisation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Scan anonymisation (échoue si occurrence)
+        run: python scripts/scan_anonymisation.py
