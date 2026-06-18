@@ -40,7 +40,9 @@ MSP_OS_ENG_LAUNCH_SITE/
 ├── assets/images/, img/         ← Visuels
 ├── og-image*.png                ← Open Graph (partage social)
 ├── MSP_OS_ENG_LAUNCH_SITE.zip   ← Archive de la version extraite (artefact)
-└── scan-anonymisation.ps1       ← Scan PowerShell de contrôle d'anonymisation
+├── scan-anonymisation.ps1       ← Scan PowerShell (usage local Windows)
+├── scripts/scan_anonymisation.py ← Scan portable (Python) — utilisé par la CI
+└── .github/workflows/anonymisation.yml ← Gate CI bloquant (push + PR vers main)
 ```
 
 ---
@@ -71,7 +73,9 @@ Page HTML autonome : en-tête (titre/contexte/sévérité), corps symptôme → 
 
 ### Anonymisation (règle n°1, non négociable)
 Aucun motif de billet réel : `17xxxxx`, `#17xxxxx`, `T17xxxxx`, `Billet #17xxxxx`, `Ticket #17xxxxx`, `Service Ticket #17xxxxx`.
-→ Exécuter `scan-anonymisation.ps1` après toute extraction/ajout — **0 occurrence** attendue.
+→ Exécuter le scan après toute extraction/ajout — **0 occurrence** attendue :
+   `python scripts/scan_anonymisation.py` (portable, = celui de la CI) ou `scan-anonymisation.ps1` (local Windows).
+→ Un **gate CI bloquant** (`.github/workflows/anonymisation.yml`) le rejoue sur chaque push/PR vers `main`.
 → Aucun nom client, IP, hostname ou donnée identifiante.
 
 ### Avant toute mise en ligne
@@ -98,7 +102,7 @@ Site statique servi par GitHub Pages (`.nojekyll` actif).
 Settings → Pages → Source : branche publiée / racine (ou /docs)
 ```
 
-Vérifier dans les Settings quelle source est active. Contrairement à `MSP_OS_ENGINE`, ce dépôt n'a **pas** de workflows d'automatisation — toute normalisation se fait manuellement ou est à porter depuis l'autre repo si besoin.
+Vérifier dans les Settings quelle source est active. Ce dépôt dispose désormais d'**un** workflow GitHub Actions : le gate d'anonymisation (`.github/workflows/anonymisation.yml`). Les workflows de normalisation de `MSP_OS_ENGINE` (`normalize-casepage-headers`, `update-contact-email`) ne sont pas (encore) portés ici.
 
 ---
 
