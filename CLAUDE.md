@@ -42,7 +42,9 @@ MSP_OS_ENG_LAUNCH_SITE/
 ├── MSP_OS_ENG_LAUNCH_SITE.zip   ← Archive de la version extraite (artefact)
 ├── scan-anonymisation.ps1       ← Scan PowerShell (usage local Windows)
 ├── scripts/scan_anonymisation.py ← Scan portable (Python) — utilisé par la CI
-└── .github/workflows/anonymisation.yml ← Gate CI bloquant (push + PR vers main)
+├── scripts/check_image_weight.py ← Garde-fou de poids des images (budget 500 Ko, grandfather)
+├── scripts/image_weight_allowlist.txt ← Images actuelles tolérées (cliquet)
+└── .github/workflows/            ← CI : anonymisation.yml + image-weight.yml (gates bloquants)
 ```
 
 ---
@@ -77,6 +79,9 @@ Aucun motif de billet réel : `17xxxxx`, `#17xxxxx`, `T17xxxxx`, `Billet #17xxxx
    `python scripts/scan_anonymisation.py` (portable, = celui de la CI) ou `scan-anonymisation.ps1` (local Windows).
 → Un **gate CI bloquant** (`.github/workflows/anonymisation.yml`) le rejoue sur chaque push/PR vers `main`.
 → Aucun nom client, IP, hostname ou donnée identifiante.
+
+### Poids des images (budget 500 Ko)
+Pour éviter d'alourdir le site, un **garde-fou de poids** (`scripts/check_image_weight.py`, gate `image-weight`) échoue sur toute **nouvelle** image > 500 Ko. Les images actuelles trop lourdes sont *grandfathered* (`scripts/image_weight_allowlist.txt`) et ne doivent que **rétrécir** — alléger en local (WebP/Squoosh) puis retirer de l'allowlist. Le garde-fou **ne modifie aucune image**.
 
 ### Avant toute mise en ligne
 1. Lancer le scan d'anonymisation (0 occurrence)

@@ -1,0 +1,35 @@
+# Allowlist du garde-fou de poids des images (grandfather).
+# Budget : 500 Ko. Format : <octets> <chemin>.
+# Une image listée ne doit que RÉTRÉCIR. Retire la ligne quand elle passe sous le budget.
+# Régénérer : python scripts/check_image_weight.py --update-allowlist
+
+1220192 FACEBOOK-Bandeau-1.png
+1220926 FACEBOOK-Bandeau.png
+598204 LOGO.png
+1164269 assets/images/bg-Hero-ent.png
+1312822 assets/images/bg-Lacunemsp-entr.png
+1547441 assets/images/bg-cloud.png
+1181478 assets/images/bg-comp-entr.png
+1465987 assets/images/bg-cta-entr.png
+1312822 assets/images/bg-echecs.png
+1312822 assets/images/bg-hero-msp.01.png
+1406041 assets/images/bg-hero-msp.png
+1181478 assets/images/bg-hero-msp1.png
+1181478 assets/images/bg-hero-msp_maina-ia.png
+1437140 assets/images/bg-profil-ia.png
+1465987 assets/images/bg-profil-ia2.png
+1453468 assets/images/bg-profilia (2).png
+1164269 assets/images/bg-profilia.png
+1164269 assets/images/bg-ville_Bella.png
+598204 assets/images/eaia-logo-officiel - Copie.png
+598204 assets/images/eaia-logo-officiel.png
+598204 assets/images/logo-ea-ia..png
+1006973 img/FACEBOOK-Bandeau-0.png
+1220192 img/FACEBOOK-Bandeau-1.png
+1220926 img/FACEBOOK-Bandeau.png
+598204 img/LOGO.png
+1356107 img/Presentation/Presentation-Tech-N3.png
+1424171 img/og-image.png
+803539 og-image-1280x480.png
+2170148 og-image-linkedin.png
+1424171 og-image.png
