@@ -55,34 +55,40 @@
       z-index: 10;
       backdrop-filter: blur(24px);
     }
-    .brand { display: flex; flex-direction: column; gap: 2px; }
-    .logo {
+    .nav-brand { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+    .nav-logo-text {
       font-family: 'Cormorant Garamond', serif;
       font-size: 30px;
       font-weight: 600;
       letter-spacing: 4px;
       line-height: 1;
     }
-    .ea { color: var(--g); }
-    .sep { color: rgba(200,149,42,.5); margin: 0 2px; }
-    .ia { color: var(--s); }
-    .tag {
+    .nav-logo-text .ea { color: var(--g); }
+    .nav-logo-text .sep { color: rgba(200,149,42,.5); margin: 0 2px; }
+    .nav-logo-text .ia {
+      background: linear-gradient(155deg,#545C6B 0%,#A8B0BF 25%,#D8DCE8 48%,#E4E8F4 55%,#9EA6B5 75%,#545C6B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-tagline {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: rgba(200,149,42,.5);
+      font-size: 7px;
+      color: rgba(200,149,42,.58);
       letter-spacing: 3px;
       text-transform: uppercase;
+      line-height: 1;
     }
-    .links { display: flex; gap: 32px; list-style: none; }
-    .links a {
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
       color: var(--m);
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-    .links a:hover, .links .active { color: var(--gl); }
-    .cta {
+    .nav-links a:hover, .nav-links .active { color: var(--gl); }
+    .nav-cta {
       border: 1px solid var(--g);
       color: var(--g);
       padding: 10px 28px;
@@ -93,7 +99,7 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .cta:hover, .gold:hover { background: var(--gl); color: #000; }
+    .nav-cta:hover, .gold:hover { background: var(--gl); color: #000; }
     .hero {
       min-height: 90vh;
       display: flex;
@@ -270,20 +276,18 @@
 <body>
 
 <nav>
-  <a href="https://www.ea-ia.ca" class="brand">
-    <div class="logo"><span class="ea">EA</span><span class="sep"> | </span><span class="ia">IA</span></div>
-    <div class="tag">Intelligence artificielle opérationnelle</div>
+  <a href="https://www.ea-ia.ca" class="nav-brand">
+    <div class="nav-logo-text"><span class="ea">EA</span><span class="sep"> | </span><span class="ia">IA</span></div>
+    <div class="nav-tagline">Intelligence artificielle opérationnelle</div>
   </a>
-  <ul class="links">
-    <li><a href="../index.html#confiance">Confiance</a></li>
-    <li><a href="../index.html#preuve">Preuve</a></li>
-    <li><a href="../index.html#pipeline">Pipeline</a></li>
-    <li><a href="../index.html#livrables">Livrables</a></li>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil MSP</a></li>
     <li><a class="active" href="msp-demos.html">Cas terrain</a></li>
-    <li><a href="../index.html#demo">Démo</a></li>
+    <li><a href="../clarification-copilot-vs-it-os.html">Sécurité</a></li>
+    <li><a href="../entreprises.html">Entreprises</a></li>
     <li><a href="../msp-preview.html#tarifs">Tarif</a></li>
   </ul>
-  <a class="cta" href="mailto:info@ea-ia.ca?subject=Démo%20MSP%20Intelligence%20OS">Démo — 30 min</a>
+  <a class="nav-cta" href="mailto:info@ea-ia.ca?subject=D%C3%A9mo%20MSP%20Intelligence%20OS">Démo — 30 min</a>
 </nav>
 
 <header class="hero">
