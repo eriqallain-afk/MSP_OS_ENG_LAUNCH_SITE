@@ -19,7 +19,7 @@
 
 MSP OS Engine — Launch Site est le **site de lancement** dédié au produit **MSP Intelligence IT**. Comme `MSP_OS_ENGINE`, il ne contient **pas d'agents IA** (ceux-ci vivent dans le repo `IT`) : il rassemble landing, page produit et casepages anonymisées pour la campagne de lancement.
 
-> ⚠️ **Redondance connue** : ce dépôt et `eriqallain-afk/MSP_OS_ENGINE` partagent la même origine (README identique). Différences observées ici : présence de `it-intelligence-os.html`, d'un `MSP_OS_ENG_LAUNCH_SITE.zip`, et **absence de workflows GitHub Actions**. Clarifier avec EA lequel des deux est canonique avant toute refonte.
+> ✅ **Ce dépôt est le site MSP canonique** (acté EA 2026-06-21). `eriqallain-afk/MSP_OS_ENGINE` est le jumeau historique non canonique — tout développement futur se fait ici.
 
 ---
 
@@ -111,9 +111,10 @@ Vérifier dans les Settings quelle source est active. Ce dépôt dispose désorm
 
 ---
 
-## 7. PARITÉ AVEC MSP_OS_ENGINE
+## 7. MSP_OS_ENGINE — repo non canonique
 
-Avant d'ajouter une fonctionnalité, vérifier si elle existe déjà dans `MSP_OS_ENGINE` (qui dispose des workflows `normalize-casepage-headers` et `update-contact-email`). Éviter de diverger : idéalement, un seul des deux dépôts reste maintenu.
+`MSP_OS_ENGINE` est le jumeau historique, non canonique. Ce repo-ci est la référence.
+Les workflows `normalize-casepage-headers` et `update-contact-email` de l'autre repo peuvent être portés ici si nécessaire — mais l'initiative appartient à ce dépôt, pas à l'autre.
 
 ---
 
