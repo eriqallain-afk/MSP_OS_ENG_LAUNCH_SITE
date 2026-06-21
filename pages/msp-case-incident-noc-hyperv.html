@@ -18,9 +18,13 @@
 
 
 /* EAIA-UNIFORM-HEADER-LOGO-TOP-2026-05-14
-   Correction 2026-06-21 : nav-brand en colonne (aligné avec index.html / msp-demos.html).
-   flex-direction: column — logo au-dessus du tagline, layout cohérent avec les pages principales. */
+   Correction 2026-06-21 : nav container flex layout + nav-brand en colonne. */
 nav, .nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 28px !important;
+  padding: 22px 64px !important;
   min-height: 78px;
 }
 .nav-brand {
@@ -56,7 +60,7 @@ footer img.footer-logo {
   display: none !important;
 }
 @media (max-width: 720px) {
-  nav, .nav { min-height: 70px; }
+  nav, .nav { min-height: 70px; padding-left: 24px !important; padding-right: 24px !important; }
   .nav-brand { gap: 1px !important; }
   .nav-logo,
   .nav-logo-img { height: 44px !important; max-width: 178px !important; }
