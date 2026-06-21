@@ -770,16 +770,16 @@ footer {
 
 
 /* EAIA-UNIFORM-HEADER-LOGO-TOP-2026-05-14
-   Logo EA IA en haut + slogan seulement à droite.
-   Le footer ne porte plus le logo afin d'éviter le déséquilibre visuel. */
+   Correction 2026-06-21 : nav-brand en colonne (aligné avec index.html / msp-demos.html).
+   flex-direction: column — logo au-dessus du tagline, layout cohérent avec les pages principales. */
 nav, .nav {
   min-height: 78px;
 }
 .nav-brand {
   display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 18px !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 2px !important;
   min-width: 0 !important;
   text-decoration: none !important;
 }
@@ -799,10 +799,8 @@ nav, .nav {
   line-height: 1.25 !important;
   letter-spacing: 2.7px !important;
   text-transform: uppercase !important;
-  color: rgba(236,205,133,.88) !important;
+  color: rgba(200,149,42,.62) !important;
   white-space: nowrap !important;
-  border-left: 1px solid rgba(200,149,42,.34) !important;
-  padding-left: 17px !important;
   margin: 0 !important;
 }
 .footer-logo,
@@ -811,15 +809,13 @@ footer img.footer-logo {
 }
 @media (max-width: 720px) {
   nav, .nav { min-height: 70px; }
-  .nav-brand { gap: 12px !important; }
+  .nav-brand { gap: 1px !important; }
   .nav-logo,
   .nav-logo-img { height: 44px !important; max-width: 178px !important; }
   .nav-brand > .nav-tagline {
     font-size: 8px !important;
     letter-spacing: 1.45px !important;
-    white-space: normal !important;
-    border-left: 0 !important;
-    padding-left: 0 !important;
+    white-space: nowrap !important;
     max-width: 210px !important;
   }
 }
