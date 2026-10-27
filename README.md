@@ -20,7 +20,7 @@ Site statique de lancement du produit **MSP Intelligence OS / MSP Intelligence A
 ## Chiffres affichés — source de vérité
 
 Les compteurs des pages publiques reflètent `IT/FACTORY_MANIFEST_IT.yaml` :
-**38 agents · 97 runbooks actifs · 94 templates · 46 scripts · 29 playbooks actifs**.
+**38 agents · 98 runbooks actifs · 94 templates · 46 scripts · 31 playbooks actifs**.
 Toute mise à jour du manifest IT doit être répercutée ici (voir `CLAUDE.md` §5).
 
 ## Tarification affichée
