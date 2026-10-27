@@ -90,7 +90,7 @@ Pour éviter d'alourdir le site, un **garde-fou de poids** (`scripts/check_image
 ### Cohérence avec le produit IT (source de vérité)
 
 Les compteurs affichés sur les pages publiques proviennent de `IT/FACTORY_MANIFEST_IT.yaml`.
-Valeurs en vigueur : **38 agents · 97 runbooks actifs · 94 templates · 46 scripts · 29 playbooks actifs · 20 casepages**.
+Valeurs en vigueur (recomptées le 2026-10-27) : **38 agents · 98 runbooks actifs · 94 templates · 46 scripts · 31 playbooks actifs · 20 casepages**.
 Formulation retenue : chiffre exact dans les tuiles de métriques, formulation arrondie
 (« près de 100 runbooks », « 90+ templates », « 45+ scripts ») dans la prose et les bandeaux,
 pour éviter une retouche du site à chaque ajout côté IT.
@@ -112,8 +112,10 @@ Grille de relancement (CAD, avant taxes), décidée par EA le 2026-09-15 :
 | Remise annuelle | −15 % |
 
 Prix d'appel affiché sur `index.html` et `entreprises.html` : « à partir de 219 $ ».
-La grille canonique est **celle du site** tant que `IT/00_DOCS/DOCUMENTATION_PRODUIT_MSP_Intelligence_AI.md`
-et `IT/00_DOCS/MATRICE_COUT_MSP_Intelligence_IT_V1.md` n'ont pas été resynchronisés (voir `[DOC_SYNC]` du rapport de sync).
+La grille canonique est **celle du site**. Depuis le 2026-10-27, `IT/00_DOCS/DOCUMENTATION_PRODUIT_MSP_Intelligence_AI.md`,
+`IT/00_DOCS/MATRICE_COUT_MSP_Intelligence_IT_V1.md`, `PLAN_AFFAIRES_FINANCEMENT_BANCAIRE_V1.md` et `PROSPECTION_MSP_V2.md` sont **alignés** sur elle ;
+les anciennes grilles (249/549/999/1 799 $ · 299/449/599 $ · paliers par technicien) ne subsistent que dans deux documents marqués *historiques*.
+La page affiche « Prix ajusté selon le nombre d'utilisateurs, le forfait de support, les agents activés » : l'**unité de facturation** reste à confirmer par EA.
 
 ### Avant toute mise en ligne
 1. Lancer le scan d'anonymisation (0 occurrence)
@@ -159,6 +161,7 @@ Les workflows `normalize-casepage-headers` et `update-contact-email` de l'autre 
 
 ---
 
-*CLAUDE.md v1.1 — MSP OS Engine Launch Site — Mis à jour le 2026-09-15*
+*CLAUDE.md v1.2 — MSP OS Engine Launch Site — Mis à jour le 2026-10-27*
+*v1.2 : compteurs recomptés sur IT (97 → 98 runbooks, 29 → 31 playbooks actifs), `msp-demos.html` 24 → 38 agents, mention erronée « 3 agents métier » retirée de `msp-preview.html`, grille de prix unifiée avec la documentation du repo IT.*
 *v1.1 : révision du contenu des pages de lancement — compteurs resynchronisés sur le manifest IT (24 → 38 agents), nouvelle grille tarifaire de relancement (219/499/749/995 $), MODULE_RISK_ENGINE présenté comme actif en production, ajout d'IT-CoachTECH, inventaire réel des pages (entreprises.html, clarification), 2 gates CI documentés.*
 *Format dérivé de : Factory/90_KNOWLEDGE/BUNDLE_PACK__TEAM_TEMPLATE/TEMPLATE__CLAUDE_MD.md v1.0 (adapté site statique)*
